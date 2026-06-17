@@ -169,6 +169,33 @@ When working with Claude, use these specialized agents for the right tasks:
 
 ---
 
+## Memory System
+
+This project maintains a **working memory system** to track discoveries, patterns, and lessons learned during development. This complements CLAUDE.md (foundational principles) with accumulated learnings.
+
+**How it works:**
+- Agents **read** `.claude/memory/MEMORY.md` FIRST — it's a quick index of all available memories
+- Each memory links to the relevant file and line number for fast lookup
+- During development, take notes in `.claude/memory/scratch/working-notes.md` (not committed)
+- At end of session, distill findings into persistent files and update MEMORY.md
+
+**Files:**
+- `.claude/memory/MEMORY.md` — Index of all patterns and session summaries (read this first)
+- `.claude/memory/session-notes.md` — Historical session summaries (committed to git)
+- `.claude/memory/patterns-discovered.md` — Code patterns that work well (committed to git)
+- `.claude/memory/scratch/working-notes.md` — Active session notes (not committed)
+- `.claude/memory/README.md` — Complete system documentation
+
+**When to use:**
+- **Before writing code:** Check MEMORY.md for relevant patterns
+- **During work:** Update working-notes.md with findings
+- **After completing a task:** Summarize into session-notes.md + update MEMORY.md
+- **When stuck:** Review session-notes.md to see how similar problems were solved
+
+**Key insight:** This system grows more valuable over time. After a few weeks, MEMORY.md becomes your project's decision history and solution library.
+
+---
+
 ## Workflow Utilities
 
 Document any custom scripts, commands, or utilities that speed up development.
